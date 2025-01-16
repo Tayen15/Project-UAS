@@ -1,0 +1,15 @@
+{
+     "configurations": [
+          {
+               "type": "node",
+               "request": "launch",
+               "name": "Launch Program",
+               "program": "${workspaceFolder}/admin/index.js",
+               "args": [
+                    "-vy"
+               ],
+               "cwd": "${workspaceFolder}/admin",
+               "internalConsoleOptions": "neverOpen"
+          }
+     ]
+}
