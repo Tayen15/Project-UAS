@@ -1,14 +1,3 @@
-# Project Bengkel
-
-Project ini adalah sebuah aplikasi bengkel yang dibuat menggunakan TailwindCSS. Aplikasi ini dirancang untuk memudahkan pengelolaan bengkel, termasuk manajemen pelanggan, layanan, dan inventaris.
-
-## Fitur
-
-- **Manajemen Pelanggan**: Tambah, edit, dan hapus data pelanggan.
-- **Manajemen Layanan**: Kelola layanan yang ditawarkan oleh bengkel.
-- **Manajemen Inventaris**: Pantau stok suku cadang dan barang lainnya.
-- **Responsive Design**: Tampilan yang responsif dan menarik di berbagai perangkat.
-
 ## Teknologi yang Digunakan
 
 - **TailwindCSS**: Framework CSS untuk styling yang cepat dan efisien.
@@ -23,9 +12,10 @@ Project ini adalah sebuah aplikasi bengkel yang dibuat menggunakan TailwindCSS. 
      ```
 2. Buka folder project:
      ```bash
-     cd project-bengkel
+     cd project-UAS
      ```
 3. Buka file `index.html` di browser untuk melihat aplikasi.
+4. Anda juga dapat melihat hasilnya secara online di [uas.firtiansyah.my.id](http://uas.firtiansyah.my.id).
 
 ## Kontribusi
 
