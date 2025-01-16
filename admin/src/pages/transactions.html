@@ -1,128 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bengkel Kita Dashboard</title>
+  </head>
 
-<head>
-     <meta charset="UTF-8" />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <title>
-          Bengkel Kita Dashboard
-     </title>
-</head>
-
-<body x-data="{ page: 'Transactions', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
-     x-init="
+  <body
+    x-data="{ page: 'Transactions', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
+    x-init="
          darkMode = JSON.parse(localStorage.getItem('darkMode'));
          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
-     :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}">
-     <!-- ===== Preloader Start ===== -->
-     <include src="../components/preloader.html"></include>
-     <!-- ===== Preloader End ===== -->
+    :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}"
+  >
+    <!-- ===== Preloader Start ===== -->
+    <include src="../components/preloader.html"></include>
+    <!-- ===== Preloader End ===== -->
 
-     <!-- ===== Page Wrapper Start ===== -->
-     <div class="flex h-screen overflow-hidden">
-          <!-- ===== Sidebar Start ===== -->
-          <include src="../components/sidebar.html"></include>
-          <!-- ===== Sidebar End ===== -->
+    <!-- ===== Page Wrapper Start ===== -->
+    <div class="flex h-screen overflow-hidden">
+      <!-- ===== Sidebar Start ===== -->
+      <include src="../components/sidebar.html"></include>
+      <!-- ===== Sidebar End ===== -->
 
-          <!-- ===== Content Area Start ===== -->
-          <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden">
-               <!-- ===== Header Start ===== -->
-               <include src="../components/header.html" />
-               <!-- ===== Header End ===== -->
+      <!-- ===== Content Area Start ===== -->
+      <div
+        class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden"
+      >
+        <!-- ===== Header Start ===== -->
+        <include src="../components/header.html" />
+        <!-- ===== Header End ===== -->
 
-               <!-- ===== Main Content Start ===== -->
-               <main>
-                    <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
-                         <div
-                              class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1">
-                              <div class="max-w-full overflow-x-auto">
-                                   <table class="w-full table-auto">
-                                        <thead>
-                                              <tr class="bg-gray-2 text-left dark:bg-meta-4">
-                                                    <th
-                                                          class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11">
-                                                          No
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Tanggal
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Pelanggan
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Nopol
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Kategori
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Keluhan
-                                                    </th>
-                                                    <th
-                                                          class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white">
-                                                          Layanan
-                                                    </th>
-                                                    <th class="px-4 py-4 font-medium text-black dark:text-white">
-                                                          Action
-                                                    </th>
-                                              </tr>
-                                        </thead>
-                                        <tbody>
-                                              <tr>
-                                                    <td
-                                                          class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11">
-                                                          <h5 class="font-medium text-black dark:text-white">1
-                                                          </h5>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">2023-10-01</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">John Doe</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">B1234XYZ</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">Service</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">Engine noise</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <p class="text-black dark:text-white">Oil change</p>
-                                                    </td>
-                                                    <td class="border-b border-[#eee] px-4 py-5 dark:border-strokedark">
-                                                          <div class="flex items-center space-x-3.5">
-                                                                 <button class="hover:text-primary">
-                                                                       Detail
-                                                                 </button>
-                                                                 <button class="hover:text-primary">
-                                                                       Edit
-                                                                 </button>
-                                                                 <button class="hover:text-primary">
-                                                                       Delete
-                                                                 </button>
-                                                          </div>
-                                                    </td>
-                                              </tr>
-                                        </tbody>
-                                   </table>
-                              </div>
-                         </div>
-                    </div>
-               </main>
-               <!-- ===== Main Content End ===== -->
+        <!-- ===== Main Content Start ===== -->
+        <main>
+          <div class="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+            <div
+              class="rounded-sm border border-stroke bg-white px-5 pb-2.5 pt-6 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:pb-1"
+            >
+              <div class="max-w-full overflow-x-auto">
+                <table class="w-full table-auto">
+                  <thead>
+                    <tr class="bg-gray-2 text-left dark:bg-meta-4">
+                      <th
+                        class="min-w-[220px] px-4 py-4 font-medium text-black dark:text-white xl:pl-11"
+                      >
+                        No
+                      </th>
+                      <th
+                        class="min-w-[150px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Tanggal
+                      </th>
+                      <th
+                        class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Pelanggan
+                      </th>
+                      <th
+                        class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Nopol
+                      </th>
+                      <th
+                        class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Kategori
+                      </th>
+                      <th
+                        class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Keluhan
+                      </th>
+                      <th
+                        class="min-w-[120px] px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Layanan
+                      </th>
+                      <th
+                        class="px-4 py-4 font-medium text-black dark:text-white"
+                      >
+                        Action
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 pl-9 dark:border-strokedark xl:pl-11"
+                      >
+                        <h5 class="font-medium text-black dark:text-white">
+                          1
+                        </h5>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">2023-10-01</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">John Doe</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">B1234XYZ</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">Service</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">Engine noise</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <p class="text-black dark:text-white">Oil change</p>
+                      </td>
+                      <td
+                        class="border-b border-[#eee] px-4 py-5 dark:border-strokedark"
+                      >
+                        <div class="flex items-center space-x-3.5">
+                          <button class="hover:text-primary">Detail</button>
+                          <button class="hover:text-primary">Edit</button>
+                          <button class="hover:text-primary">Delete</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
-          <!-- ===== Content Area End ===== -->
-     </div>
-     <!-- ===== Page Wrapper End ===== -->
-</body>
-
+        </main>
+        <!-- ===== Main Content End ===== -->
+      </div>
+      <!-- ===== Content Area End ===== -->
+    </div>
+    <!-- ===== Page Wrapper End ===== -->
+  </body>
 </html>
