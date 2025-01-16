@@ -2,121 +2,293 @@
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Bengkel Landing Page</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bengkel Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 
 <body class="bg-gray-100">
-     <!-- Notification -->
-     <div class="bg-yellow-300 text-black p-2 text-center text-xs">
-          <p>Informasi penting: Kami buka setiap hari dari jam 08:00 - 17:00.</p>
-     </div>
+    <!-- Navbar -->
+    <nav class="bg-gray-100 drop-shadow-lg text-black p-4 fixed w-full top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="/" class="text-xl font-bold text-black flex items-center">
+                <img src="https://img.icons8.com/ios-filled/50/1E40AF/car.png" alt="Car Icon" class="w-6 h-6 mr-2">
+                Bengkel Kita
+            </a>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-button" class="text-black focus:outline-none">
+                    <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Menu -->
+            <ul id="menu"
+                class="hidden md:flex md:space-x-4 absolute md:static bg-gray-100 md:bg-transparent w-full md:w-auto left-0 top-full md:top-auto flex-col md:flex-row">
+                <li><a href="#" class="block px-4 py-2 hover:bg-gray-200 md:hover:bg-transparent">Beranda</a></li>
+                <li><a href="#services" class="block px-4 py-2 hover:bg-gray-200 md:hover:bg-transparent">Layanan</a>
+                </li>
+                <li><a href="#about" class="block px-4 py-2 hover:bg-gray-200 md:hover:bg-transparent">Tentang
+                        Kami</a></li>
+                <li><a href="services.html"
+                        class="block px-4 py-2 hover:bg-gray-200 md:hover:bg-transparent">Booking</a></li>
+            </ul>
+        </div>
+    </nav>
 
-     <!-- Navbar -->
-     <nav class="bg-gray-100 drop-shadow-lg text-black p-4 fixed w-full top-0 z-50 transition-transform duration-300 ease-in-out">
-          <div class="container mx-auto flex justify-between items-center">
-               <h1 class="text-xl font-bold text-blue-500">Bengkel Kita</h1>
-               <ul class="flex space-x-4">
-                    <li><a href="#" class="hover:underline">Beranda</a></li>
-                    <li><a href="#services" class="hover:underline">Layanan</a></li>
-                    <li><a href="#about" class="hover:underline">Tentang Kami</a></li>
-                    <li><a href="services.html" class="hover:underline">Booking</a></li>
-               </ul>
-          </div>
-     </nav>
+    <!-- Landing Page -->
+    <section class="text-black py-20 w-full h-auto mt-10">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6">
+            <!-- Text Content -->
+            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-5xl font-extrabold mb-6 leading-tight">
+                    Selamat Datang di <span class="text-blue-800">Bengkel Kita</span>
+                </h1>
+                <p class="text-lg mb-6 text-gray-700">
+                    Kami menyediakan layanan perawatan dan perbaikan kendaraan dengan kualitas terbaik dan teknisi
+                    yang berpengalaman.
+                </p>
+                <a href="#services"
+                    class="inline-block px-6 py-3 text-white bg-blue-800 font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition-all">
+                    Lihat Layanan Kami
+                </a>
+            </div>
+            <!-- Image Content -->
+            <div class="md:w-1/2 flex justify-center">
+                <img src="image/heading.jpg" alt="Bengkel Kita" class="rounded-lg shadow-lg">
+            </div>
+        </div>
+    </section>
 
-     <!-- Landing Page -->
-     <section class="bg-blue-500 text-white py-20 mt-5 w-full h-1/2">
-          <div class="container mx-auto text-center">
-               <h1 class="text-4xl font-bold mb-4">Selamat Datang di Bengkel Kita</h1>
-               <p class="text-lg">Layanan perawatan kendaraan terbaik untuk Anda</p>
-          </div>
-     </section>
+    <!-- Services Section -->
+    <section id="services" class="px-4 py-16 bg-gray-50" data-aos="fade-up">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Layanan Kami</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Ringan -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
+                    data-aos="zoom-in">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <img src="https://img.icons8.com/ios-filled/50/1E40AF/oil-industry.png"
+                                alt="Icon Service Ringan" class="w-12 h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Service Ringan</h3>
+                        <p class="text-gray-600 mb-4">Perawatan sederhana untuk menjaga kendaraan Anda tetap prima.</p>
+                        <p class="text-gray-800 font-semibold text-lg mb-4">Mulai dari <span
+                                class="text-blue-600">Rp150.000</span></p>
+                        <a href="detail_service_ringan.html"
+                            class="px-4 py-2 bg-blue-800 text-white font-medium rounded hover:bg-blue-700">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+                <!-- Service Besar -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <img src="https://img.icons8.com/ios-filled/50/1E40AF/engine.png" alt="Icon Service Besar"
+                                class="w-12 h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Service Besar</h3>
+                        <p class="text-gray-600 mb-4">Perbaikan dan perawatan menyeluruh untuk kendaraan Anda.</p>
+                        <p class="text-gray-800 font-semibold text-lg mb-4">Mulai dari <span
+                                class="text-blue-600">Rp500.000</span></p>
+                        <a href="detail_service_besar.html"
+                            class="px-4 py-2 bg-blue-800 text-white font-medium rounded hover:bg-blue-700">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+                <!-- Body Repair -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden transform transition duration-300 hover:scale-105"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <div class="p-6 flex flex-col items-center text-center">
+                        <div class="bg-blue-100 p-4 rounded-full mb-4">
+                            <img src="https://img.icons8.com/ios-filled/50/1E40AF/station-wagon.png"
+                                alt="Icon Body Repair" class="w-12 h-12">
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Body Repair</h3>
+                        <p class="text-gray-600 mb-4">Perbaikan body kendaraan agar kembali seperti baru.</p>
+                        <p class="text-gray-800 font-semibold text-lg mb-4">Mulai dari <span
+                                class="text-blue-600">Rp750.000</span></p>
+                        <a href="detail_body_repair.html"
+                            class="px-4 py-2 bg-blue-800 text-white font-medium rounded hover:bg-blue-700">
+                            Pesan Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Services Section -->
-     <section id="services" class="py-16">
-          <div class="container mx-auto text-center">
-               <h2 class="text-2xl font-bold mb-8">Layanan Kami</h2>
-               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <a href="detail_service_ringan.html" class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">Service Ringan</h3>
-                         <p class="text-gray-600">Perawatan sederhana untuk menjaga kendaraan Anda tetap prima.</p>
-                    </a>
-                    <a href="detail_service_besar.html" class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">Service Besar</h3>
-                         <p class="text-gray-600">Perbaikan dan perawatan menyeluruh untuk kendaraan Anda.</p>
-                    </a>
-                    <a href="detail_body_repair.html" class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">Body Repair</h3>
-                         <p class="text-gray-600">Perbaikan body kendaraan agar kembali seperti baru.</p>
-                    </a>
-               </div>
-          </div>
-     </section>
+    <!-- About Us Section -->
+    <section id="about" class="bg-gray-200 py-16" >
+        <div class="container mx-auto text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-8">Tentang Kami</h2>
+            <p class="text-gray-700 max-w-2xl mx-auto">
+                Bengkel Kita adalah mitra terpercaya Anda dalam merawat kendaraan. Dengan tenaga ahli berpengalaman
+                dan layanan terbaik, kami siap membantu kendaraan Anda selalu dalam kondisi terbaik.
+            </p>
+        </div>
+    </section>
 
-     <!-- About Us Section -->
-     <section id="about" class="bg-gray-200 py-16">
-          <div class="container mx-auto text-center">
-               <h2 class="text-2xl font-bold mb-8">Tentang Kami</h2>
-               <p class="text-gray-700 max-w-2xl mx-auto">
-                    Bengkel Kita adalah mitra terpercaya Anda dalam merawat kendaraan. Dengan tenaga ahli berpengalaman
-                    dan layanan terbaik, kami siap membantu kendaraan Anda selalu dalam kondisi terbaik.
-               </p>
-          </div>
-     </section>
+    <!-- Testimoni Pelanggan Section -->
+    <section id="rating" class="py-16 bg-gray-50">
+        <div class="container mx-auto" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Testimoni Pelanggan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimoni 1 -->
+                <div class="bg-white shadow-md rounded-lg p-6 transform transition duration-300 hover:scale-105" data-aos="zoom-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">John Doe</h3>
+                    <div class="flex items-center mb-4">
+                        <!-- Rating Stars -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-600">"Pelayanan yang sangat memuaskan! Staf sangat ramah dan pekerjaan selesai lebih cepat dari perkiraan."</p>
+                </div>
+                <!-- Testimoni 2 -->
+                <div class="bg-white shadow-md rounded-lg p-6 transform transition duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Jane Smith</h3>
+                    <div class="flex items-center mb-4">
+                        <!-- Rating Stars -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-600">"Harga yang terjangkau dengan kualitas pelayanan yang luar biasa. Sangat direkomendasikan!"</p>
+                </div>
+                <!-- Testimoni 3 -->
+                <div class="bg-white shadow-md rounded-lg p-6 transform transition duration-300 hover:scale-105" data-aos="zoom-in" data-aos-delay="400">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Michael Johnson</h3>
+                    <div class="flex items-center mb-4">
+                        <!-- Rating Stars -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 15l-5.878 3.09 1.123-6.544L.49 6.909l6.557-.953L10 0l2.952 5.956 6.558.953-4.755 4.637 1.123 6.544L10 15z" />
+                        </svg>
+                    </div>
+                    <p class="text-gray-600">"Tim yang sangat profesional dan peduli terhadap kebutuhan pelanggan. Pasti akan kembali lagi."</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-     <!-- Staff Rating Section -->
-     <section id="rating" class="py-16">
-          <div class="container mx-auto text-center">
-               <h2 class="text-2xl font-bold mb-8">Rating Staff</h2>
-               <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">John Doe</h3>
-                         <p class="text-gray-600">Rating: ⭐⭐⭐⭐⭐</p>
-                    </div>
-                    <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">Jane Smith</h3>
-                         <p class="text-gray-600">Rating: ⭐⭐⭐⭐</p>
-                    </div>
-                    <div class="bg-white shadow-lg p-6 rounded-lg hover:shadow-xl">
-                         <h3 class="text-lg font-semibold mb-2">Michael Johnson</h3>
-                         <p class="text-gray-600">Rating: ⭐⭐⭐⭐⭐</p>
-                    </div>
-               </div>
-          </div>
-     </section>
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-8">
+        <div class="container mx-auto text-center">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Gratis Pemasangan</h3>
+                    <p class="text-gray-300">Nikmati layanan pemasangan gratis untuk setiap pembelian produk.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">Gratis Konsultasi</h3>
+                    <p class="text-gray-300">Konsultasikan kebutuhan kendaraan Anda tanpa biaya tambahan.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-2">100% Produk Asli</h3>
+                    <p class="text-gray-300">Kami menjamin semua produk yang kami jual adalah asli dan berkualitas.</p>
+                </div>
+            </div>
+            <hr class="border-gray-400 my-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 text-start mx-20">
+                <!-- Layanan -->
+                <div class="flex flex-col">
+                    <h3 class="text-lg font-semibold mb-2">Layanan Kami</h3>
+                    <ul class=" text-gray-300 space-y-1">
+                        <li>Body Repair</li>
+                        <li>Servis Berkala</li>
+                        <li>Perbaikan Mesin</li>
+                        <li>Perawatan AC Mobil</li>
+                        <li>Pemasangan Aksesori</li>
+                    </ul>
+                </div>
+                <!-- Jadwal Operasional -->
+                <div class="flex flex-col">
+                    <h3 class="text-lg font-semibold mb-2">Jadwal Operasional</h3>
+                    <p class="text-gray-300 space-y-1">
+                        <span><strong>Senin - Jumat:</strong> 08:00 - 18:00</span><br>
+                        <span><strong>Sabtu:</strong> 08:00 - 15:00</span><br>
+                        <span><strong>Minggu & Hari Libur:</strong> Tutup</span>
+                    </p>
+                </div>
 
-     <!-- Footer -->
-     <footer class="bg-blue-600 text-white py-8">
-          <div class="container mx-auto text-center">
-               <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4">
-                    <div>
-                         <h3 class="text-lg font-semibold mb-2">Gratis Pemasangan</h3>
-                         <p class="text-gray-200">Nikmati layanan pemasangan gratis untuk setiap pembelian produk.</p>
-                    </div>
-                    <div>
-                         <h3 class="text-lg font-semibold mb-2">Gratis Konsultasi</h3>
-                         <p class="text-gray-200">Konsultasikan kebutuhan kendaraan Anda tanpa biaya tambahan.</p>
-                    </div>
-                    <div>
-                         <h3 class="text-lg font-semibold mb-2">100% Produk Asli</h3>
-                         <p class="text-gray-200">Kami menjamin semua produk yang kami jual adalah asli dan berkualitas.</p>
-                    </div>
-               </div>
-               <hr class="border-gray-400 my-4">
-               <div class="mb-4">
+                <!-- Sosial Media -->
+                <div class="flex flex-col">
                     <h3 class="text-lg font-semibold mb-2">Ikuti Kami</h3>
-                    <div class="flex justify-center space-x-4">
-                         <a href="#" class="hover:underline">Facebook</a>
-                         <a href="#" class="hover:underline">Instagram</a>
-                         <a href="#" class="hover:underline">Twitter</a>
+                    <div class="text-gray-300 space-x-4">
+                        <a href="#" class="hover:underline"><img
+                                src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" alt="Facebook"
+                                class="inline-block mr-2"></a>
+                        <a href="#" class="hover:underline"><img
+                                src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"
+                                class="inline-block mr-2"></a>
+                        <a href="#" class="hover:underline"><img
+                                src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="X"
+                                class="inline-block mr-2"></a>
                     </div>
-               </div>
-               <p>&copy; 2025 Bengkel Kita. Semua hak dilindungi.</p>
-          </div>
-     </footer>
+                </div>
+            </div>
+            <hr class="border-gray-400 my-4">
+            <p>&copy; 2025 Bengkel Kita. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/index.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 800, 
+            easing: 'ease-in-out', 
+            once: false 
+        });
+    </script>
 </body>
 
 </html>
