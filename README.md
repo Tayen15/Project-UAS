@@ -8,7 +8,7 @@
 
 1. Clone repositori ini:
      ```bash
-     git clone https://github.com/username/project-bengkel.git
+     git clone https://github.com/Tayen15/Project-UAS.git
      ```
 2. Buka folder project:
      ```bash
