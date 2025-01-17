@@ -156,15 +156,27 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="bg-gray-200 py-16" >
-        <div class="container mx-auto text-center px-4" data-aos="fade-down">
-            <h2 class="text-2xl font-bold mb-8">Tentang Kami</h2>
-            <p class="text-gray-700 max-w-2xl mx-auto">
-                Bengkel Kita adalah mitra terpercaya Anda dalam merawat kendaraan. Dengan tenaga ahli berpengalaman
-                dan layanan terbaik, kami siap membantu kendaraan Anda selalu dalam kondisi terbaik.
-            </p>
+    <section id="about" class="bg-gray-200 py-16">
+        <div class="container mx-auto px-4" data-aos="fade-down">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 items-center">
+                <!-- Kolom Gambar -->
+                <div class="flex justify-center">
+                    <img src="image/about1.jpg" alt="Tentang Kami" class="rounded-lg shadow-lg w-full max-w-md">
+                </div>
+                <!-- Kolom Teks -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Bengkel Kita adalah mitra terpercaya Anda dalam merawat kendaraan. Kami menawarkan layanan perawatan dan perbaikan kendaraan berkualitas tinggi, didukung oleh tim ahli yang berpengalaman dan berdedikasi.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        Dengan menggunakan teknologi modern dan suku cadang asli, kami memastikan kendaraan Anda selalu dalam kondisi terbaik. Kepercayaan Anda adalah prioritas kami, dan kami berkomitmen untuk memberikan pelayanan terbaik bagi setiap pelanggan.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
+    
 
     <!-- Testimoni Pelanggan Section -->
     <section id="rating" class="py-16 bg-gray-50">
@@ -241,7 +253,9 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto text-start md:text-center">
+            <!-- Brand and Tagline -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 mx-4 px-4">
+                <!-- Kolom lainnya -->
                 <div>
                     <h3 class="text-lg font-semibold mb-2">Gratis Pemasangan</h3>
                     <p class="text-gray-300">Nikmati layanan pemasangan gratis untuk setiap pembelian produk.</p>
@@ -256,7 +270,18 @@
                 </div>
             </div>
             <hr class="border-gray-400 my-4">
+            <!-- Kolom Layanan, Jadwal, Sosial Media -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-4 text-start mx-8 md:mx-20">
+                <!-- Brand and Tagline -->
+                <div class="flex items-center md:items-start">
+                    <img src="https://img.icons8.com/ios-filled/50/1E40AF/car.png" alt="Bengkel Kita Logo" class="w-6 h-6 mr-4 mt-0.5">
+                    <div>
+                        <h3 class="text-base font-semibold mb-2">Bengkel Kita</h3>
+                        <p class="text-gray-400 text-sm">
+                            Mitra terbaik untuk perawatan kendaraan Anda. Solusi cepat, tepat, dan terpercaya.
+                        </p>
+                    </div>
+                </div>
                 <!-- Layanan -->
                 <div class="flex flex-col">
                     <h3 class="text-base font-semibold mb-2">Layanan Kami</h3>
@@ -277,27 +302,21 @@
                         <span>Minggu & Hari Libur: Tutup</span>
                     </p>
                 </div>
-
                 <!-- Sosial Media -->
                 <div class="flex flex-col">
                     <h3 class="text-base font-semibold mb-2">Ikuti Kami</h3>
                     <div class="text-gray-300 space-x-4">
-                        <a href="#" class="hover:underline"><img
-                                src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" alt="Facebook"
-                                class="inline-block mr-2"></a>
-                        <a href="#" class="hover:underline"><img
-                                src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram"
-                                class="inline-block mr-2"></a>
-                        <a href="#" class="hover:underline"><img
-                                src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="X"
-                                class="inline-block mr-2"></a>
+                        <a href="#" class="hover:underline"><img src="https://img.icons8.com/ios-filled/24/ffffff/facebook.png" alt="Facebook" class="inline-block mr-2"></a>
+                        <a href="#" class="hover:underline"><img src="https://img.icons8.com/ios-filled/24/ffffff/instagram-new.png" alt="Instagram" class="inline-block mr-2"></a>
+                        <a href="#" class="hover:underline"><img src="https://img.icons8.com/ios-filled/24/ffffff/twitter.png" alt="X" class="inline-block mr-2"></a>
                     </div>
                 </div>
             </div>
             <hr class="border-gray-400 my-4">
-            <p class="text-gray-400">&copy; 2025 Bengkel Kita. Semua hak dilindungi.</p>
+            <p class="text-gray-400 text-center">&copy; 2025 Bengkel Kita. Semua hak dilindungi.</p>
         </div>
     </footer>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="js/index.js"></script>
