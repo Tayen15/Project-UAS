@@ -15,7 +15,7 @@
      cd project-UAS
      ```
 3. Buka file `index.html` di browser untuk melihat aplikasi.
-4. Anda juga dapat melihat hasilnya secara online di [Bengkel Kita](https://bengkel-kita.firtiansyah.my.id).
+4. Anda juga dapat melihat hasilnya secara online di [Bengkel Jaya](https://bengkel-kita.firtiansyah.my.id).
 
 ## Kontribusi
 
